@@ -1,0 +1,95 @@
+section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+body {
+  background-color: rgb(173, 185, 217);
+  margin: auto;
+  max-width: 1200px;
+  /* font-family: Optima, sans-serif; */
+  font-family: Copperplate, serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3vh;
+  text-decoration: underline;
+}
+h2 {
+  font-size: 2.6vh;
+}
+h3 {
+  font-size: 2vh;
+}
+h4 {
+  font-size: 1.8vh;
+}
+
+.splash {
+  width: 50%;
+}
+
+.title {
+  position: sticky;
+  top: 30vh;
+}
+.title-text {
+  border-top: solid 1px black;
+}
+.title-spacer {
+  height: 20vh;
+}
+
+.splash > h2 {
+  border-top: solid 1px black;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 40vh;
+}
+
+.deck {
+  box-sizing: border-box;
+  border-left: solid 1px black;
+  flex-grow: 1;
+}
+
+.card {
+  border: solid 1px white;
+  background-color: rgba(255, 255, 255, 60%);
+  margin: 32px;
+  max-width: 800px;
+  min-width: 200px;
+}
+
+#portrait {
+  margin: auto;
+  position: relative;
+  margin-top: 20vh;
+  height: 50vh;
+  width: 38vh;
+}
+
+#portrait > img {
+  height: inherit;
+  position: absolute;
+}
+
+@media ((max-width: 500px) or (max-aspect-ratio: 2/3)) {
+  body {
+    background-color: red;
+  }
+  .splash {
+    width: 100%;
+  }
+  .title-spacer {
+    height: 0px;
+  }
+}
