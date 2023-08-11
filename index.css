@@ -1,3 +1,8 @@
+:root {
+  --base: rgb(211, 211, 211);
+  --text: black;
+}
+
 section {
   display: flex;
   flex-wrap: wrap;
@@ -5,32 +10,35 @@ section {
 }
 
 body {
-  /* background-color: rgb(173, 185, 217); */
+  background-color: var(--base);
+  color: var(--text);
   margin: auto;
   max-width: 1200px;
-  font-family: Gill Sans, sans-serif;
+  font-family: Raleway, sans-serif;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: Copperplate, serif;
+  font-family: Cinzel, serif;
+  font-weight: 700;
   text-align: center;
+  padding: 0 4%;
 }
 
 h1 {
   font-size: 36pt;
-  text-decoration: underline;
 }
 h2 {
-  font-size: 28pt;
+  font-size: 30pt;
 }
 h3 {
-  font-size: 20pt;
+  font-size: 16pt;
+  font-weight: 400;
 }
 h4 {
-  font-size: 18pt;
+  font-size: 22pt;
 }
 
 .splash {
@@ -42,14 +50,14 @@ h4 {
   top: 10vh;
 }
 .title-text {
-  border-top: solid 1px black;
+  border-top: solid 1px var(--text);
 }
 .title-spacer {
   height: 20vh;
 }
 
 .splash > h2 {
-  border-top: solid 1px black;
+  border-top: solid 1px var(--text);
   position: -webkit-sticky;
   position: sticky;
   top: 40vh;
@@ -57,15 +65,15 @@ h4 {
 
 .deck {
   box-sizing: border-box;
-  border-left: solid 1px black;
-  flex-grow: 1;
+  border-left: solid 1px var(--text);
+  width: 50%;
 }
 
 .card {
   box-sizing: border-box;
-  border: solid 1px white;
   background-color: rgba(255, 255, 255, 60%);
-  margin: 32px;
+  margin: 36px;
+  margin-top: 0;
   padding: 18px;
   max-width: 500px;
   min-width: 200px;
@@ -74,7 +82,6 @@ h4 {
 .logo-icon {
   width: 42px;
   height: 42px;
-  fill: black;
 }
 
 #portrait-wrapper {
@@ -85,7 +92,7 @@ h4 {
 #portrait,
 #portrait > img {
   position: relative;
-  right: -4%;
+  right: -3%;
   height: 72vh;
   width: 52vh;
   max-width: 644px;
@@ -98,7 +105,7 @@ h4 {
   position: absolute;
 }
 
-@media ((max-width: 500px) or (max-aspect-ratio: 1/1)) {
+@media ((max-width: 500px) or (max-aspect-ratio: 1.15/1)) {
   body {
     /* background-color: red; */
   }
@@ -111,9 +118,10 @@ h4 {
   }
   .deck {
     border-left: none;
+    width: 100%;
   }
   .card {
-    max-width: none;
+    max-width: 500px;
     border: none;
     margin: auto;
     margin-top: 32px;
@@ -123,5 +131,12 @@ h4 {
   #portrait {
     margin: auto;
     right: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --base: black;
+    --text: white;
   }
 }
